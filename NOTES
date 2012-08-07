@@ -1,0 +1,29 @@
+Javascript:
+    The port number is derived from a javascript function.
+    The selenium webdriver is used to extract the javascript results
+
+
+Data Items:
+    Two data items that needed further processing were:
+        lastUpdate
+        countryCity
+
+    lastUpdate defines the data/time when the ip:port was last verified.
+    The Xpath selector separated the date and time by a newline.
+
+    countryCity identifies the country and city where the ip:port is located.
+    Separating the country from the city to insert in the database involved further processing.
+    Also, a '!' (bang) is occasionally present along with countryCity.
+    The reason, at this time, is unknown.  The bang is separated and identified for further processing.
+
+
+Process:
+    At spider start-up, the selenium webdriver is initiated (jsIp_spider.py).
+    The parse manager parses the Front Page through its own fronPage() function.
+    The parse manager extracts all the TLD to follow and parses each TLD (with pages).
+    The page loader parses each proxy page and passes items to the pipeline.
+    The pipeline inserts each item into its respective database table.
+    At spider close, the selenium webdriver is closed.
+
+Extras:
+    twisted adbapi support

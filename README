@@ -1,0 +1,28 @@
+Using the Scrapy web crawling framework, a spider is constructed to crawl a free proxy list website (http://spys.ru/en/).
+Beacuse the website contains some Javascript, the Selenium webdriver is implemented.
+
+The spider crawls TLD (Top Level Domain) proxies and dumps them into a MySQL database.
+
+
+Front Page:
+    http://spys.ru/en/proxy-by-country/
+
+Example TLD page:
+    http://spys.ru/free-proxy-list/CN/
+
+
+Modules:
+    scrapy
+    selenium
+    twisted
+    MySQLdb
+    re
+    datetime
+    pytz
+    urlparse
+    time
+
+
+Resources:
+    http://scrapy.org/
+    http://seleniumhq.org/docs/03_webdriver.html
